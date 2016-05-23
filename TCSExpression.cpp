@@ -23,6 +23,6 @@ TCSExpression::~TCSExpression() {
 }
 
 string TCSExpression::evaluate(){
-    this->regexp = "(.*?)";
+    this->regexp = "([a-zA-Z]+\\s*)+";
     return this->regexp;
 }

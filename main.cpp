@@ -28,7 +28,7 @@ int main(int argc, char** argv) {
     string regxep = interpreter.evaluate(argv[1]);
     string lineInput;
     //and analyze the lines in the file
-    cout<<"Regular Expression: "<<regxep<<endl;
+    //cout<<"Regular Expression: "<<regxep<<endl;
      pcrecpp::RE expression(regxep);
     while (getline(cin, lineInput)) {
         if(expression.FullMatch(lineInput)){

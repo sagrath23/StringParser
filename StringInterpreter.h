@@ -31,6 +31,7 @@ public:
     StringInterpreter();
     StringInterpreter(const StringInterpreter& orig);
     virtual ~StringInterpreter();
+    bool validateSequence(int);
     string evaluate(string);
 private:
     pcrecpp::RE* literalPattern;
@@ -38,6 +39,7 @@ private:
     pcrecpp::RE* spaceLimitTCSPattern;
     pcrecpp::RE* greedyTCSPattern;
     string regexp;
+    int lastSequenceEvaluated;
 };
 
 #endif /* STRINGINTERPRETER_H */
