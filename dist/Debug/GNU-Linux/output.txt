@@ -1,0 +1,10 @@
+Literal Pattern Matches!
+Literal Pattern Matches!
+Literal Pattern Matches!
+Literal Pattern Matches!
+foo bar
+foo bar foo
+foo foo
+is foo a bar
+Hi Madafacars!!
+String to parse: foo bar some foo
