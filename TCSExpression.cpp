@@ -23,6 +23,6 @@ TCSExpression::~TCSExpression() {
 }
 
 string TCSExpression::evaluate(){
-    this->regexp = "Normal TCS";
+    this->regexp = "(.*?)";
     return this->regexp;
 }

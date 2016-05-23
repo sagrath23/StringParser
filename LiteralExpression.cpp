@@ -14,14 +14,15 @@
 #include "LiteralExpression.h"
 
 LiteralExpression::LiteralExpression(string token) : StringExpression(token) {
+    this->regexp = "("+this->token+")";
 }
-/*
+
 LiteralExpression::LiteralExpression(const LiteralExpression& orig){
 }
-*/
+
 LiteralExpression::~LiteralExpression() {
 }
 
 string LiteralExpression::evaluate(){
-    return this->token;
+    return this->regexp;
 }

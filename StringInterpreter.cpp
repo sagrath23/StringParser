@@ -39,28 +39,27 @@ string StringInterpreter::evaluate(string input) {
         //create matching string expressions
         bool matches = false;
         if(this->literalPattern->FullMatch(*it)){
-            cout<< "Literal Pattern Matches!" <<endl;
             LiteralExpression lit(*it);
-            this->regexp = this->regexp + lit.evaluate() + "(\\s+)";
+            this->regexp = this->regexp + lit.evaluate();
             matches = true;
         }
         if(this->normalTCSPattern->FullMatch(*it)){
-            cout<< "NormalTCS Pattern Matches!" <<endl;
             TCSExpression tcs(*it);
-            this->regexp = this->regexp + tcs.evaluate() + "(\\s+)";
+            this->regexp = this->regexp + tcs.evaluate();
             matches = true;
         }
         if(this->spaceLimitTCSPattern->FullMatch(*it)){
-            cout<< "SpaceLimit TCS Pattern Matches!" <<endl;
             SpaceLimitTCSExpression sltcs(*it);
-            this->regexp = this->regexp + sltcs.evaluate() + "(\\s+)";
+            this->regexp = this->regexp + sltcs.evaluate();
             matches = true;
         }
         if(this->greedyTCSPattern->FullMatch(*it)){
-            cout<< "Greedy TCS Pattern Matches!" <<endl;
             GreedyTCSExpression gtcs(*it);
-            this->regexp = this->regexp + gtcs.evaluate() + "(\\s+)";
+            this->regexp = this->regexp + gtcs.evaluate();
             matches = true;
+        }
+        if(it != tokens.end()-1){
+            this->regexp = this->regexp +"(\\s+)";
         }
     }    
     return this->regexp;

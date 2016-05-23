@@ -20,7 +20,7 @@
 class LiteralExpression : StringExpression {
 public:
     LiteralExpression(string);
-    //LiteralExpression(const LiteralExpression& orig);
+    LiteralExpression(const LiteralExpression& orig);
     virtual ~LiteralExpression();
     virtual string evaluate();
 private:

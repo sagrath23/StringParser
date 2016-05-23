@@ -15,6 +15,8 @@
 #define SPACELIMITTCSEXPRESSION_H
 
 #include "TCSExpression.h"
+#include <pcrecpp.h>
+#include <iostream>
 
 
 class SpaceLimitTCSExpression : StringExpression {

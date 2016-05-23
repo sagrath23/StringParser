@@ -23,6 +23,6 @@ GreedyTCSExpression::~GreedyTCSExpression() {
 }
 
 string GreedyTCSExpression::evaluate(){
-    this->regexp = "Greedy Expression";
+    this->regexp = "(.*?)";
     return this->regexp;
 }

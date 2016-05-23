@@ -22,7 +22,15 @@ SpaceLimitTCSExpression::SpaceLimitTCSExpression(const SpaceLimitTCSExpression& 
 SpaceLimitTCSExpression::~SpaceLimitTCSExpression() {
 }
 
-string SpaceLimitTCSExpression::evaluate(){
-    this->regexp = "Space Limit Expression";
+string SpaceLimitTCSExpression::evaluate() {
+    this->regexp = "";
+    pcrecpp::RE re("(%\\{)([0-9]+)S([0-9]+)(\\})");
+    string open, close;
+    int order, allowedSpaces;
+    re.FullMatch(this->token, &open, &order, &allowedSpaces, &close);
+    this->regexp += "([a-zA-Z]+)";
+    for (int i = 0; i < allowedSpaces; i++) {
+        this->regexp += "\\s([a-zA-Z]+)";
+    }
     return this->regexp;
 }
